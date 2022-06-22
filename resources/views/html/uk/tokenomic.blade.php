@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Недомаги - токеноміка</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://demareaktor.github.io/Wrong-Mages-site/css/tokenomic.css">
-    <link rel="stylesheet" type="text/css" href="https://demareaktor.github.io/Wrong-Mages-site/css/generic.css">
-    <link rel="shortcut icon" href="https://demareaktor.github.io/Wrong-Mages-site/images/icon.gif" />
+    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/tokenomic.css">
+    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/generic.css">
+    <link rel="shortcut icon" href="{{$git_folder}}images/icon.gif" />
 </head>
 
 <body id="fon">
@@ -24,7 +24,7 @@
                 На данний момент реальний токен ME ще не створений, уважно слідкуйте за новинами, щоб першими купити її( можливо тоді вона буде найдешевшою).
                 </p>
         <div class="table">
-            <img id="mana-image" src="https://demareaktor.github.io/Wrong-Mages-site/images/mana.gif"  alt="mana">
+            <img id="mana-image" src="{{$git_folder}}images/mana.gif"  alt="mana">
         </div>
     </div>
     <h2>Шляхи використання</h2>
@@ -34,12 +34,12 @@
         
         В самому метавсесвіті мана виступає єдиною грошовою одиницею, енергією для використання магії та споживчим ресурсом для деяких створінь та Вічних. В ігрі ману можна отримати, змагаючись з іншими магами в битвах, подорожуючи в онлайн режимі або збираючи її біля джерел Буття.</p>
         <div class="table" id="ways-use">
-            <img src="https://demareaktor.github.io/Wrong-Mages-site/images/battle.gif" alt="battle">
-            <img src="https://demareaktor.github.io/Wrong-Mages-site/images/manaUp.gif" alt="mana grows">
+            <img src="{{$git_folder}}images/battle.gif" alt="battle">
+            <img src="{{$git_folder}}images/manaUp.gif" alt="mana grows">
         </div>
     <h1>Токенообіг</h1>
     <div class="table" id="tokenomic-table">
-        <img id="tokenomic-image" src="https://demareaktor.github.io/Wrong-Mages-site/images/tokenomika.gif"  alt="tokenomic">
+        <img id="tokenomic-image" src="{{$git_folder}}images/tokenomika.gif"  alt="tokenomic">
     </div>
 </body>
 

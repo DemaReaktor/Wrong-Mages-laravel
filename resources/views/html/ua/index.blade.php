@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <title>Недомаги</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://demareaktor.github.io/Wrong-Mages-site/css/generic.css">
-    <link rel="stylesheet" type="text/css" href="https://demareaktor.github.io/Wrong-Mages-site/css/index-dekstop.css">
-    <link rel="shortcut icon" href="https://demareaktor.github.io/Wrong-Mages-site/images/icon.gif" />
+    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/generic.css">
+    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/index-dekstop.css">
+    <link rel="shortcut icon" href="{{$git_folder}}images/icon.gif" />
 </head>
 
 <body id="fon">
     <div class="table" id="Wrong-mages-table">
-        <img id="Wrong-mages-image" src="https://demareaktor.github.io/Wrong-Mages-site/images/Недомаги.gif"
+        <img id="Wrong-mages-image" src="{{$git_folder}}images/Недомаги.gif"
             alt="Wrong Mages">
         <div id="game">Онлайн гра з <br>мультивсесвітом<br> і токеномікою</div>
     </div>
@@ -55,20 +55,20 @@
             <div class="button">Купити</div>
         </div>
         <div class="table">
-            <img id="mana-image" src="https://demareaktor.github.io/Wrong-Mages-site/images/mana.gif" alt="mana">
+            <img id="mana-image" src="{{$git_folder}}images/mana.gif" alt="mana">
         </div>
     </div>
     <h1>Токеноміка</h1>
     <div class="table" id="tokenomic-table">
-        <img id="tokenomic-image" src="https://demareaktor.github.io/Wrong-Mages-site/images/tokenomika.gif"
+        <img id="tokenomic-image" src="{{$git_folder}}images/tokenomika.gif"
             alt="tokenomic">
     </div>
     <h1>Битви</h1>
     <p>Тебе хтось образив? Хтось засумнівався у твоїй силі? Просто вмаж йому! Але не де-не-де, а саме на арені. Покажи
         всім, що з якого тіста ти. Заодно поповниш ману, головне самому не стати боксерською грушею.</p>
     <div class="table" id="battle-table">
-        <img src="https://demareaktor.github.io/Wrong-Mages-site/images/battle.gif" alt="battle">
-        <img src="https://demareaktor.github.io/Wrong-Mages-site/images/manaUp.gif" alt="mana grow">
+        <img src="{{$git_folder}}images/battle.gif" alt="battle">
+        <img src="{{$git_folder}}images/manaUp.gif" alt="mana grow">
     </div>
     <div class="button" id="battle-description">Детальніше</div>
     <h1>Плани</h1>
@@ -76,11 +76,11 @@
         <div id="plan-text">
             <p>Слідкуйте за подальшими оновленнями, вам в цьому допоможе планова карта. Команда не сидить на місці,
                 потійно щось придумує, редагує, видаляє. Детальніше за посиланням.</p>
-            <div class="button"><a href="https://demareaktor.github.io/Wrong-Mages-site/html/plans.html">Детальніше</a>
+            <div class="button"><a href="{{$git_folder}}html/plans.html">Детальніше</a>
             </div>
         </div>
         <div class="table">
-            <img id="plan-image" src="https://demareaktor.github.io/Wrong-Mages-site/images/plane.gif" alt="plans">
+            <img id="plan-image" src="{{$git_folder}}images/plane.gif" alt="plans">
         </div>
     </div>
     <h1>Зворотній зв'язок</h1>
@@ -88,26 +88,26 @@
         найпоширеніших питань. Також ви можете зв’язатися з нами в телеграмі, інстаграмі або твітері.</p>
     <div id="two-buttons">
         <div class="button">FAQ</div>
-        <a href="https://demareaktor.github.io/Wrong-Mages-site/html/feedback.html">
+        <a href="{{$git_folder}}html/feedback.html">
             <div class="button">зворотній зв'язок</div>
         </a>
     </div>
     <h1>Посилання на інші сторінки</h1>
     <div class="button">
-        <a href="http://localhost/WrongMages/index.php?page=guide">гайд по грі</a>
+        <a href="{{$path}}guide">гайд по грі</a>
     </div>
     <div class="button">
-        <a href="http://localhost/WrongMages/index.php?page=news">новини</a>
+        <a href="{{$path}}news">новини</a>
     </div>
     <div class="button">
-        <a href="http://localhost/WrongMages/index.php?page=tokenomic">токеноміка</a>
+        <a href="{{$path}}tokenomic">токеноміка</a>
     </div>
     <div class="button">
-        <a href="http://localhost/WrongMages/index.php?page=plans">
+        <a href="{{$path}}plans">
             плани</a>
     </div>
     <div class="button">
-        <a href="http://localhost/WrongMages/index.php?page=feedback">зворотній зв'язок
+        <a href="{{$path}}feedback">зворотній зв'язок
         </a>
     </div>
 </body>

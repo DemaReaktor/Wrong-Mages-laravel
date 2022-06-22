@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Недомаги - новини</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="https://demareaktor.github.io/Wrong-Mages-site/css/generic.css">
-    <link rel="stylesheet" type="text/css" href="https://demareaktor.github.io/Wrong-Mages-site/css/news.css">
-    <link rel="shortcut icon" href="https://demareaktor.github.io/Wrong-Mages-site/images/icon.gif" />
+    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/generic.css">
+    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/news.css">
+    <link rel="shortcut icon" href="{{$git_folder}}images/icon.gif" />
 </head>
 
 <body id="fon">
@@ -42,7 +42,7 @@
         </div>
         <div class="new">
             <p class="date">30.04.2022</p>
-            <p class="text">Тут може бути ваша реклама. Звертайтесь до <a href="https://demareaktor.github.io/Wrong-Mages-site/html/feedback.html">служби підтримки</a>></p>
+            <p class="text">Тут може бути ваша реклама. Звертайтесь до <a href="{{$git_folder}}html/feedback.html">служби підтримки</a>></p>
         </div>
     </div>
 </body>
