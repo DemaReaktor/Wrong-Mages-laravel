@@ -2,7 +2,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/generic.css">
     <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/guide-dekstop.css">
     <link rel="shortcut icon" href="{{$git_folder}}images/icon.gif" />
 </head>
