@@ -7,3 +7,4 @@ Route::get('/','App\Http\Controllers\PageController@getNull');
 Route::get('/{page}','App\Http\Controllers\PageController@get');
 
 Route::post('/language','App\Http\Controllers\LanguageController@post');
+Route::post('/comment','App\Http\Controllers\CommentController@post');

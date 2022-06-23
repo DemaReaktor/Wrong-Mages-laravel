@@ -19,7 +19,7 @@
                 <form method="POST" action="/language">
                     @csrf
                     <input type="image" id="language" name="language" src= "{{$git_folder}}images/ua.png"   alt="language" >
-                    <input type="hidden" name="goback" value="<?php echo $_SERVER['REQUEST_URI']; ?>">
+                    {!! $goback !!}
                 </form>
             <div class="button" id="play">Грати</div>
             <img id="menu-button" src="{{$git_folder}}images/menu.png"  alt="menu icon">
