@@ -1,14 +1,10 @@
-<!DOCTYPE html>
+@extends('layout.main')
 
-<head>
-    <meta charset="utf-8">
-    <title>Недомаги</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/index-dekstop.css">
-    <link rel="shortcut icon" href="{{$git_folder}}images/icon.gif" />
-</head>
+@section('css')
+<link rel="stylesheet" type="text/css" href="{{$git_folder}}css/index-dekstop.css">
+@endsection
 
-<body id="fon">
+@section('page')
     <div class="table" id="Wrong-mages-table">
         <img id="Wrong-mages-image" src="{{$git_folder}}images/Недомаги.gif"
             alt="Wrong Mages">
@@ -109,6 +105,4 @@
         <a href="{{$path}}feedback">зворотній зв'язок
         </a>
     </div>
-</body>
-
-</html>
+@endsection

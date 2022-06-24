@@ -1,15 +1,10 @@
-<!DOCTYPE html>
+@extends('layout.main')
 
-<head>
-    <meta charset="utf-8">
-    <title>Недомаги - токеноміка</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/tokenomic.css">
-    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/generic.css">
-    <link rel="shortcut icon" href="{{$git_folder}}images/icon.gif" />
-</head>
+@section('css')
+<link rel="stylesheet" type="text/css" href="{{$git_folder}}css/tokenomic.css">
+@endsection
 
-<body id="fon">
+@section('page')
     <h1>Токеноміка</h1>
     <p>Гра Недомаги позволяє гравцям заробляти гроші, торгуватись і навіть вести свій бізнес. Для цього в грі вбудована економіка, валютою якої є мана(ME), а товарами э NFT.  Детальніше про все це у цій сторінці.
     </p>
@@ -41,6 +36,4 @@
     <div class="table" id="tokenomic-table">
         <img id="tokenomic-image" src="{{$git_folder}}images/tokenomika.gif"  alt="tokenomic">
     </div>
-</body>
-
-</html>
+@endsection

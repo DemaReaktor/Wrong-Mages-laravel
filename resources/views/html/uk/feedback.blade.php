@@ -1,15 +1,10 @@
-<!DOCTYPE html>
+@extends('layout.main')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Недомаги - зворотній зв'язок</title>
-    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/generic.css">
-    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/feedback.css">
-    <link rel="shortcut icon" href="{{$git_folder}}images/icon.gif" />
-</head>
+@section('css')
+<link rel="stylesheet" type="text/css" href="{{$git_folder}}css/feedback.css">
+@endsection
 
-<body id="fon">
+@section('page')
     <h1>Зворотній зв'язок</h1>
     <p>Наша команда заківлена мати зв’язок з нашими магами. Ви можете коментувати наші оновлення, тестувати бета-версії, задавати питання і навіть критикувати нас.</p>
     <h2>Тестування</h2>
@@ -33,17 +28,15 @@
     </form> 
     </div>
     <div class="comments">
-<!-- < ?php 
-if(isset($_SESSION['comments-name']))
-for($i = 0;$i < count($_SESSION['comments-name'])+1;$i++){
+        <?php
+    if(isset($_SESSION['comments-name']))
+for($i = 0;$i < count($_SESSION['comments-name']);$i++){
     echo '<div class="user-commnet-table" style="border: 2px solid rgba(50,250,50,0.4); background-color: rgba(100,100,155,0.5); margin-right: auto;">
         <p class="user-commnet-name" style="width: 200px;
         color: rgba(255,200,100,1);">'.$_SESSION['comments-name'][$i].'</p>
         <p class="user-commnet-text" style="width: 700px; color: black; font-size: 15px;">'.$_SESSION['comments-text'][$i].'</p>
         </div>';
 }
-?> -->
+?>
 </div>
-</body>
-
-</html>
+@endsection

@@ -1,15 +1,10 @@
-<!DOCTYPE html>
+@extends('layout.main')
 
-<head>
-    <meta charset="utf-8">
-    <title>Недомаги - новини</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/generic.css">
-    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/news.css">
-    <link rel="shortcut icon" href="{{$git_folder}}images/icon.gif" />
-</head>
+@section('css')
+<link rel="stylesheet" type="text/css" href="{{$git_folder}}css/news.css">
+@endsection
 
-<body id="fon">
+@section('page')
     <h1>Новини</h1>
     <div id="scroll-table">
         <div class="new">
@@ -42,9 +37,7 @@
         </div>
         <div class="new">
             <p class="date">30.04.2022</p>
-            <p class="text">Тут може бути ваша реклама. Звертайтесь до <a href="{{$git_folder}}html/feedback.html">служби підтримки</a>></p>
+            <p class="text">Тут може бути ваша реклама. Звертайтесь до <a href="{{$path}}feedback">служби підтримки</a>></p>
         </div>
     </div>
-</body>
-
-</html>
+@endsection

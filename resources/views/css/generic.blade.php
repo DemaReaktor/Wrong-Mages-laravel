@@ -154,7 +154,7 @@ textarea {
 
 input[type=submit] {
     color: green;
-    width: 100px;
+    width: 200px;
     border: 0px;
 }
 

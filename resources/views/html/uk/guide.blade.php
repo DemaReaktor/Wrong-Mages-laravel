@@ -1,15 +1,10 @@
-<!DOCTYPE html>
+@extends('layout.main')
 
-<head>
-    <meta charset="utf-8">
-    <title>Недомаги - гайд</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/generic.css">
-    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/guide-dekstop.css">
-    <link rel="shortcut icon" href="{{$git_folder}}images/icon.gif" />
-</head>
+@section('css')
+<link rel="stylesheet" type="text/css" href="{{$git_folder}}css/guide-dekstop.css">
+@endsection
 
-<body id="fon">
+@section('page')
     <h1>Гайд по грі Недомаги</h1>
     <div id="table">
         <section>
@@ -49,6 +44,4 @@
             <p>Джерела Буття</p>
         </section>
     </div>
-</body>
-
-</html>
+@endsection

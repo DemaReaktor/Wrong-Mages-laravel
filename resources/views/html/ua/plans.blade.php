@@ -1,15 +1,10 @@
-<!DOCTYPE html>
+@extends('layout.main')
 
-<head>
-    <meta charset="utf-8">
-    <title>Недомаги - плани</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/plans.css">
-    <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/generic.css">
-    <link rel="shortcut icon" href="{{$git_folder}}images/icon.gif" />
-</head>
+@section('css')
+<link rel="stylesheet" type="text/css" href="{{$git_folder}}css/plans.css">
+@endsection
 
-<body id="fon">
+@section('page')
     <h1>Плани</h1>
     <div id="plans">
         <div id="plan-table">
@@ -32,6 +27,4 @@
         </div>
         <img id="plan-image" src="{{$git_folder}}images/plane.gif" alt="planes">
     </div>
-</body>
-
-</html>
+@endsection
