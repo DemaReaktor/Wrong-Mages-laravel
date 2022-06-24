@@ -19,7 +19,11 @@
     color: black; 
     font-size: 15px;
 }
-
+.comment-likes{
+    width: auto; 
+    color: red; 
+    font-size: 10px;
+}
 </style>
 @endsection
 
@@ -57,6 +61,9 @@
         <p class="user-commnet-text" >
         {{ $_SESSION['comments-text'][$i] }}
         </p>
+        <div class="comment-likes">
+            вподобайки:{{$_SESSION['comments-like'][$i]}},лайки:{{$_SESSION['comments-dislike'][$i]}}
+        </div>
     </div>
     @endfor
 @endisset
