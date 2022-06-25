@@ -7,7 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Comments extends Model
 {
     public $comments;
-    
+
+    public static function add_comment($name,$text){
+        new Comment($name,$text);
+    }
+    public static function like($id){
+        $_SESSION['comments-like'][$id]++;
+    }
+    public static function dislike($id){
+        $_SESSION['comments-dislike'][$id]++;
+    }
 }
 
 class Comment{
@@ -22,24 +31,33 @@ class Comment{
         $this->text = $text;
         $this->like = 0;
         $this->dislike = 0;
-        $this->id = count($_SESSION['comment-id']);
-        $_SESSION['comment-name'][$this->name] = $this->name;
-        $_SESSION['comment-text'][$this->text] = $this->text;
-        $_SESSION['comment-like'][$this->like] = $this->like;
-        $_SESSION['comment-dislike'][$this->dislike] = $this->dislike;
+        if(isset($_SESSION['comments-name']))
+            $this->id = count($_SESSION['comments-name'])+1;
+        else{
+            $this->id = 0;
+            $_SESSION['comments-name'] = [];
+            $_SESSION['comments-text'] = [];
+            $_SESSION['comments-like'] = [];
+            $_SESSION['comments-dislike'] = [];
+        } 
+
+        $_SESSION['comments-name'][$this->id] = $this->name;
+        $_SESSION['comments-text'][$this->id] = $this->text;
+        $_SESSION['comments-like'][$this->id] = $this->like;
+        $_SESSION['comments-dislike'][$this->id] = $this->dislike;
     }
     public function like($count=1){
         if(gettype($count)=="integer" && $count>1)
         {
             $this->like += $count;
-            $_SESSION['comment-like'][$this->like] = $this->like;
+            $_SESSION['comments-like'][$this->like] = $this->like;
         }
     }
     public function dislike($count=1){
         if(gettype($count)=="integer" && $count>1)
         {
             $this->dislike += $count;
-            $_SESSION['comment-dislike'][$this->dislike] = $this->dislike;
+            $_SESSION['comments-dislike'][$this->dislike] = $this->dislike;
         }
     }
 }

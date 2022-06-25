@@ -19,10 +19,27 @@
     color: black; 
     font-size: 15px;
 }
-.comment-likes{
+.comment-likes {
     width: auto; 
     color: red; 
     font-size: 10px;
+    padding-left: 10px;
+    display: flex;
+}
+
+.comment-likes *{
+    width:20px;
+    height: 20px;
+    font-size: 18px;
+}
+
+.count {
+    margin-right: 3px;
+    width:auto;
+}
+
+#like {
+    margin-right: 15px; 
 }
 </style>
 @endsection
@@ -53,7 +70,7 @@
     <div class="comments">
 @isset($_SESSION['comments-name'])
 <!-- I could foreach but I should get elements of 2 arrays -->
-    @for($i = 0;$i < count($_SESSION['comments-name']);$i++)
+    @for($i = 1;$i <= count($_SESSION['comments-name']);$i++)
     <div class="user-commnet-table">
         <p class="user-commnet-name">
             {{ $_SESSION['comments-name'][$i] }}
@@ -62,7 +79,18 @@
         {{ $_SESSION['comments-text'][$i] }}
         </p>
         <div class="comment-likes">
-            вподобайки:{{$_SESSION['comments-like'][$i]}},лайки:{{$_SESSION['comments-dislike'][$i]}}
+        <p class="count">{{$_SESSION['comments-like'][$i]}}</p>
+            <form method="POST" action="/like?id={{$i}}" id="like">
+                @csrf
+                <input type="image" name="like" src= "{{$git_folder}}images/like.png"   alt="like" >
+                {!! $goback !!}
+            </form>
+            <p class="count">{{$_SESSION['comments-dislike'][$i]}}</p>
+            <form method="POST" action="/dislike?id={{$i}}">
+                @csrf
+                <input type="image" id="dislike" name="dislike" src= "{{$git_folder}}images/dislike.png"   alt="dislike" >
+                {!! $goback !!}
+            </form>
         </div>
     </div>
     @endfor
