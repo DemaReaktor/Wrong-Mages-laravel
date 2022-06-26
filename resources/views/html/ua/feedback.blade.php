@@ -76,11 +76,7 @@
 @foreach(Comments::all() as $comment)
     <div class="user-commnet-table">
         <p class="user-commnet-name">
-            @foreach(Users::all() as $user)
-                @if($user['id'] == $comment['user-id'])
-                    {{$user['login']}}
-                @endif
-            @endforeach
+            {{$comment->user['login']}}
         </p>
         <p class="user-commnet-text" >
         {{ $comment['text']}}
@@ -91,7 +87,7 @@
             $count = 0;
         @endphp
         @foreach(Likes::all() as $like)
-            @if($like['comment-id'] == $comment['id'])
+            @if($like->comment['id'] == $comment['id'])
                 @php
                     $count++;
                 @endphp
@@ -109,7 +105,7 @@
             $count = 0;
         @endphp
         @foreach(Dislikes::all() as $like)
-            @if($like['comment-id'] == $comment['id'])
+            @if($like->comment['id'] == $comment['id'])
                 @php
                     $count++;
                 @endphp
