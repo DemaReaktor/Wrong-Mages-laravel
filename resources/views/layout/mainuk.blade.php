@@ -25,6 +25,7 @@
             <img id="twitter" src="{{$git_folder}}images/twitter.png"  alt="twitter">
         </div>
         <div id="right-menu-items">
+        <p>{{$_COOKIE['login']??''}}</p>
                 <form method="POST" action="/language">
                     @csrf
                     <input type="image" id="language" name="language" src= "{{$git_folder}}images/uk.png"   alt="language" >
@@ -35,6 +36,30 @@
         </div>
     </div>
     @yield('page')
+    <div class="button">
+        <a href="{{$path}}login">login
+        </a>
+    </div>
+    <div class="button">
+        <a href="{{$path}}">Main</a>
+    </div>
+    <div class="button">
+        <a href="{{$path}}guide">гайд по грі</a>
+    </div>
+    <div class="button">
+        <a href="{{$path}}news">новини</a>
+    </div>
+    <div class="button">
+        <a href="{{$path}}tokenomic">токеноміка</a>
+    </div>
+    <div class="button">
+        <a href="{{$path}}plans">
+            плани</a>
+    </div>
+    <div class="button">
+        <a href="{{$path}}feedback">зворотній зв'язок
+        </a>
+    </div>
 </body>
 
 </html>

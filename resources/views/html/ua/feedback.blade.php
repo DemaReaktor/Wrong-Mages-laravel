@@ -60,7 +60,6 @@
     <div id="comment-left">
     <form method="POST" class="comment-table" style="width:800px;" action="/comment">
     @csrf
-            <p>Ім'я</p><input type="text" id="comment-name" name="comment-name">
             <p>Коментар</p>
             <textarea name="comment-text" rows="6" cols="70">...</textarea>
             <input type="submit" value="Відправити коментарій">
@@ -68,32 +67,63 @@
     </form> 
     </div>
     <div class="comments">
-@isset($_SESSION['comments-name'])
-<!-- I could foreach but I should get elements of 2 arrays -->
-    @for($i = 1;$i <= count($_SESSION['comments-name']);$i++)
+        @php
+        use App\Models\Users;
+        use App\Models\Comments;
+        use App\Models\Likes;
+        use App\Models\Dislikes;
+        @endphp
+@foreach(Comments::all() as $comment)
     <div class="user-commnet-table">
         <p class="user-commnet-name">
-            {{ $_SESSION['comments-name'][$i] }}
+            @foreach(Users::all() as $user)
+                @if($user['id'] == $comment['user-id'])
+                    {{$user['login']}}
+                @endif
+            @endforeach
         </p>
         <p class="user-commnet-text" >
-        {{ $_SESSION['comments-text'][$i] }}
+        {{ $comment['text']}}
         </p>
         <div class="comment-likes">
-        <p class="count">{{$_SESSION['comments-like'][$i]}}</p>
-            <form method="POST" action="/like?id={{$i}}" id="like">
+        <p class="count">
+        @php
+            $count = 0;
+        @endphp
+        @foreach(Likes::all() as $like)
+            @if($like['comment-id'] == $comment['id'])
+                @php
+                    $count++;
+                @endphp
+            @endif
+        @endforeach
+        {{$count}}
+        </p>
+            <form method="POST" action="/like?id={{$comment['id']}}" id="like">
                 @csrf
                 <input type="image" name="like" src= "{{$git_folder}}images/like.png"   alt="like" >
                 {!! $goback !!}
             </form>
-            <p class="count">{{$_SESSION['comments-dislike'][$i]}}</p>
-            <form method="POST" action="/dislike?id={{$i}}">
+            <p class="count">
+            @php
+            $count = 0;
+        @endphp
+        @foreach(Dislikes::all() as $like)
+            @if($like['comment-id'] == $comment['id'])
+                @php
+                    $count++;
+                @endphp
+            @endif
+        @endforeach
+        {{$count}}    
+            </p>
+            <form method="POST" action="/dislike?id={{$comment['id']}}">
                 @csrf
                 <input type="image" id="dislike" name="dislike" src= "{{$git_folder}}images/dislike.png"   alt="dislike" >
                 {!! $goback !!}
             </form>
         </div>
     </div>
-    @endfor
-@endisset
+    @endforeach
 </div>
 @endsection

@@ -87,22 +87,4 @@
             <div class="button">зворотній зв'язок</div>
         </a>
     </div>
-    <h1>Посилання на інші сторінки</h1>
-    <div class="button">
-        <a href="{{$path}}guide">гайд по грі</a>
-    </div>
-    <div class="button">
-        <a href="{{$path}}news">новини</a>
-    </div>
-    <div class="button">
-        <a href="{{$path}}tokenomic">токеноміка</a>
-    </div>
-    <div class="button">
-        <a href="{{$path}}plans">
-            плани</a>
-    </div>
-    <div class="button">
-        <a href="{{$path}}feedback">зворотній зв'язок
-        </a>
-    </div>
 @endsection
