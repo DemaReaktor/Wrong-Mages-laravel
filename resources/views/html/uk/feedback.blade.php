@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layout.main'.$_COOKIE['language']??'ua')
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/feedback.css">
@@ -28,15 +28,32 @@
     </form> 
     </div>
     <div class="comments">
-        <?php
-    if(isset($_SESSION['comments-name']))
-for($i = 0;$i < count($_SESSION['comments-name']);$i++){
-    echo '<div class="user-commnet-table" style="border: 2px solid rgba(50,250,50,0.4); background-color: rgba(100,100,155,0.5); margin-right: auto;">
-        <p class="user-commnet-name" style="width: 200px;
-        color: rgba(255,200,100,1);">'.$_SESSION['comments-name'][$i].'</p>
-        <p class="user-commnet-text" style="width: 700px; color: black; font-size: 15px;">'.$_SESSION['comments-text'][$i].'</p>
-        </div>';
-}
-?>
+    @isset($_SESSION['comments-name'])
+<!-- I could foreach but I should get elements of 2 arrays -->
+    @for($i = 1;$i <= count($_SESSION['comments-name']);$i++)
+    <div class="user-commnet-table">
+        <p class="user-commnet-name">
+            {{ $_SESSION['comments-name'][$i] }}
+        </p>
+        <p class="user-commnet-text" >
+        {{ $_SESSION['comments-text'][$i] }}
+        </p>
+        <div class="comment-likes">
+        <p class="count">{{$_SESSION['comments-like'][$i]}}</p>
+            <form method="POST" action="/like?id={{$i}}" id="like">
+                @csrf
+                <input type="image" name="like" src= "{{$git_folder}}images/like.png"   alt="like" >
+                {!! $goback !!}
+            </form>
+            <p class="count">{{$_SESSION['comments-dislike'][$i]}}</p>
+            <form method="POST" action="/dislike?id={{$i}}">
+                @csrf
+                <input type="image" id="dislike" name="dislike" src= "{{$git_folder}}images/dislike.png"   alt="dislike" >
+                {!! $goback !!}
+            </form>
+        </div>
+    </div>
+    @endfor
+@endisset
 </div>
 @endsection

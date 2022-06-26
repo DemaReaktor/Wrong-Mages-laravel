@@ -1,4 +1,4 @@
-@extends('layout.main')
+@extends('layout.main'.$_COOKIE['language']??'ua')
 
 @section('css')
 <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/guide-dekstop.css">
