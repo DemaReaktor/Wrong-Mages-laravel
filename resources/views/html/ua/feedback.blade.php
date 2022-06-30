@@ -1,6 +1,12 @@
 @extends('layout.main'.$_COOKIE['language']??'ua')
 
 @section('css')
+@php
+        use App\Models\Users;
+        use App\Models\Comments;
+        use App\Models\Likes;
+        use App\Models\Dislikes;
+        @endphp
 <link rel="stylesheet" type="text/css" href="{{$git_folder}}css/feedback.css">
 <style>
     .user-commnet-table{
@@ -57,6 +63,7 @@
     </div>
     <h2>Коментарі</h2>
     <p>Хочете побажати нам удачі, розкритикувати нас за руки із не того місця, дати рекомендацію чи просто поспілкуватись? Тоді вам сюди.</p>
+@if (isset($_COOKIE['login']) && Users::isLogin($_COOKIE['login'],$_COOKIE['password']??''))
     <div id="comment-left">
     <form method="POST" class="comment-table" style="width:800px;" action="/comment">
     @csrf
@@ -67,12 +74,6 @@
     </form> 
     </div>
     <div class="comments">
-        @php
-        use App\Models\Users;
-        use App\Models\Comments;
-        use App\Models\Likes;
-        use App\Models\Dislikes;
-        @endphp
 @foreach(Comments::all() as $comment)
     <div class="user-commnet-table">
         <p class="user-commnet-name">
@@ -121,5 +122,11 @@
         </div>
     </div>
     @endforeach
+@else
+<div class="button" style="margin-left:70px;">
+    <a href="{{$path}}login">Зайти в аккаунт</a>
+</div>
+@endisset
+
 </div>
 @endsection

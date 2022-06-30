@@ -5,17 +5,18 @@
 @endsection
 
 @section('page')
+<h1 style="text-align:left;">Увійти</h1>
 <form method="POST" class="comment-table" style="width:800px;" action="/login">
     @csrf
-            <p>увійти - логін</p><input type="text" id="comment-name" name="login">
+            <p>Логін</p><input type="text" id="comment-name" name="login">
             <p>Пароль</p><input type="text" id="comment-name" name="password">
-            <input type="submit" value="Відправити коментарій">
+            <input type="submit" value="Увійти">
     </form> 
-    <form method="POST" class="comment-table" style="width:800px;" action="/auth">
+    <div class="button" style="margin-left: 0px;">
+        <a href="{{$path}}auth">Ще не маєте аакаунт? зареєструйтесь</a> 
+    </div>
+    <form method="POST" class="button" style="margin-left: 0px;" action="/exit">
     @csrf
-            <p>Авторизуватись - логін</p><input type="text" id="comment-name" name="login">
-            <p>Пароль</p><input type="text" id="comment-name" name="password">
-            <input type="submit" value="Відправити коментарій">
-    </form> 
+            <input type="submit" id="submit-button" value="Вийти з аккаунта" style="margin-left: 0px; ">
     </form> 
 @endsection

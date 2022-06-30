@@ -25,7 +25,7 @@ body {
     ) 0 100%), url("{{$git_folder}}/images/fon.png");
     background-size: cover;
     background-attachment: fixed;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 body * {
@@ -34,7 +34,17 @@ body * {
 }
 
 body * * {
-    margin: 0px;
+    margin:0px;
+}
+
+section{
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    background-color: #4DFFEA;
+    border-radius: 40px;
 }
 
 /* font */
@@ -65,6 +75,8 @@ a:hover {
     font-family: "Gothic";
     font-size: 40px;
     font-weight: bold;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .comment-left {
@@ -156,6 +168,20 @@ input[type=submit] {
     color: green;
     width: 200px;
     border: 0px;
+}
+
+#submit-button {
+    width: auto;
+    border: 0px;
+    text-decoration: none;
+    color: #000;
+    background: rgba(255,255,255,0);
+    text-align: center;
+    vertical-align: middle;
+    color: black;
+    font-family: "Gothic";
+    font-size: 40px;
+    font-weight: bold;
 }
 
 /* ids */

@@ -17,3 +17,5 @@ Route::post('/dislike','App\Http\Controllers\CommentController@dislike');
 Route::post('/login','App\Http\Controllers\LoginController@login');
 
 Route::post('/auth','App\Http\Controllers\LoginController@auth');
+
+Route::post('/exit','App\Http\Controllers\LoginController@exit');

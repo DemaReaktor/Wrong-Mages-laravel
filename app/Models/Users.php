@@ -16,6 +16,7 @@ class Users extends Model
         foreach($logins as $e)
             if($e['login'] == $login && $e['password'] == $password)
                 return true;
+
         return false;
     }
 
@@ -23,6 +24,7 @@ class Users extends Model
         foreach(self::all() as $user)
             if($user['login'] == $login)
                 return $user;
+                
         return null;
     }
 }

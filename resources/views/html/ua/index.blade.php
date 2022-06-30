@@ -83,8 +83,8 @@
         найпоширеніших питань. Також ви можете зв’язатися з нами в телеграмі, інстаграмі або твітері.</p>
     <div id="two-buttons">
         <div class="button">FAQ</div>
-        <a href="{{$git_folder}}html/feedback.html">
-            <div class="button">зворотній зв'язок</div>
-        </a>
+        <div class="button">
+        <a href="{{$git_folder}}html/feedback.html">зворотній зв'язок</a>
+        </div> 
     </div>
 @endsection
