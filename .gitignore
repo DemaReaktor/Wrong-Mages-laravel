@@ -1,7 +1,10 @@
 /*/*
 !/routes/*
+!app/Http/
 !app/Models
 !resources/views/
+app/Http/*
+!app/Http/Controllers
 /*.*
 !.gitignore
 artisan
